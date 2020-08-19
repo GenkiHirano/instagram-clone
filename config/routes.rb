@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#top'
-  get  'pages/top'
-  get  'pages/notification'
-  get  'pages/post'
-  get  'pages/my_page'
+  get  '/notification', to:'pages#notification'
+  get  '/post',         to:'pages#post'
+  get  '/my_page',      to:'pages#my_page'
 end
