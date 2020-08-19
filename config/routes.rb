@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'pages#top'
+  get  'pages/top'
+  get  'pages/notification'
+  get  'pages/post'
+  get  'pages/my_page'
 end
