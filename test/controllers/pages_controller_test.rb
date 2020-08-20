@@ -25,5 +25,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
       assert_select "title", "My_page | Instagram"
   end
-
 end
