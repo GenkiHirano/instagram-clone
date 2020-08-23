@@ -7,7 +7,4 @@ class PagesController < ApplicationController
 
   def post
   end
-
-  def my_page
-  end
 end

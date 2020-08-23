@@ -6,4 +6,9 @@ module UsersHelper
    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
    image_tag(gravatar_url, alt: user.name, class: "gravatar")
  end
+
+ # ユーザーがログインしていればtrue、その他ならfalseを返す
+  def logged_in?
+    !current_user.nil?
+  end
 end
