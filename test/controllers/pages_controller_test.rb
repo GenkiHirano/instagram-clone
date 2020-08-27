@@ -19,10 +19,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
       assert_select "title", "Post | Instagram"
   end
-
-  test "should get my_page" do
-      get my_page_path
-      assert_response :success
-      assert_select "title", "My_page | Instagram"
-  end
 end
