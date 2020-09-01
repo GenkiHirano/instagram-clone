@@ -1,14 +1,16 @@
-
-<% provide(:title, @user.name) %>
+<% provide(:title, @user.username) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= @user.fullname %></br>
+        <%= @user.username %>
       </h1>
-      <%= link_to "プロフィール編集", edit_user_path(current_user) %><br>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <% if user_signed_in? && @user == current_user %>
+        <%= link_to "プロフィール編集", edit_user_registration_path(current_user) %><br>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <% end %>
     </section>
   </aside>
 </div>

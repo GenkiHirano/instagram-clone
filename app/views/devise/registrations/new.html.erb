@@ -6,20 +6,27 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :fullname %>
+      <%= f.text_field :fullname, autofocus: true %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
 
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Sign up", class: "btn btn-primary" %>
     <% end %>
     <%= render "devise/shared/links" %>
+    <a href="###">利用規約</a><br>
   </div>
 </div>
