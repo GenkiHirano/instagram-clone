@@ -2,18 +2,23 @@
 
 class Users::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
-  def new
-    super
-  end
+  #def new
+    #super
+  #end
 
   # POST /resource/password
-  def create
-    super
-  end
+  #def create
+    #super
+  #end
 
   # GET /resource/password/edit?reset_password_token=abcdef
   def edit
+    binding.pry
     super
+    binding.pry
+    redirect_to edit_user_password_path(@user)
+    #redirect_to edit_user_password_path
+    binding.pry
   end
 
   # PUT /resource/password
@@ -21,14 +26,14 @@ class Users::PasswordsController < Devise::PasswordsController
     super
   end
 
-  protected
+  #protected
 
-  def after_resetting_password_path_for(resource)
-     super(resource)
-   end
+  #def after_resetting_password_path_for(resource)
+     #super(resource)
+   #end
 
-   The path used after sending reset password instructions
-   def after_sending_reset_password_instructions_path_for(resource_name)
-     super(resource_name)
-   end
+   #The path used after sending reset password instructions
+   #def after_sending_reset_password_instructions_path_for(resource_name)
+     #super(resource_name)
+   #end
 end

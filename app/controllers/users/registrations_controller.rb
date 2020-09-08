@@ -1,5 +1,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
+  def edit
+    super
+    unless @user == current_user
+      redirect_to user_path(@user)
+    end
+    #binding.pry
+  end
+
   def update
     super
     #binding.pry
