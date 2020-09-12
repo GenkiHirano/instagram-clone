@@ -302,7 +302,7 @@ DEPENDENCIES
   byebug (= 11.0.1)
   capybara (= 3.28.0)
   devise
-  faker
+  faker (= 2.1.2)
   guard (= 2.16.2)
   guard-minitest (= 2.4.6)
   image_processing (= 1.9.3)

@@ -13,12 +13,8 @@ class Users::PasswordsController < Devise::PasswordsController
 
   # GET /resource/password/edit?reset_password_token=abcdef
   def edit
-    binding.pry
     super
-    binding.pry
     redirect_to edit_user_password_path(@user)
-    #redirect_to edit_user_password_path
-    binding.pry
   end
 
   # PUT /resource/password

@@ -1,5 +1,4 @@
 class MicropostsController < ApplicationController
-
   before_action :authenticate_user!, only: [:create, :destroy]
   before_action :correct_user,       only: :destroy
 
