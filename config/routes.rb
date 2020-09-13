@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#top'
-  #get  '/users/password/edit', to:'users/passwords#edit'
-  #devise_scope :user do
-  #get '/users/password/edit', to: 'users/passwords#edit'
-  #end
-
+  get 'search', to: 'microposts#search', as: :search
   devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks',
   passwords: 'users/passwords'}
   resources :users do

@@ -20,6 +20,13 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+    @posts = Micropost.search(params[:search])
+    #binding.pry
+    #render 'pages/top'
+  end
+
   private
 
     def micropost_params

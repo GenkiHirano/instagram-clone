@@ -5,12 +5,13 @@ class UsersController < ApplicationController
   before_action :admin_user,         only: [:destroy]
   before_action :current_user,       only: [:index]
 
+  #mount_uploader :image, ImageUploader
+
   def index
     @users = User.paginate(page: params[:page])
   end
 
   def show
-    @user = current_user
     @microposts = @user.microposts.paginate(page: params[:page])
   end
 
