@@ -13,7 +13,7 @@
     </aside>
     <div class="col-md-8">
       <h3>画像検索</h3>
-      <%= render 'microposts/search' %>
+      ここに検索機能のrenderが入ります。(エラーが発生するため外してあります。)
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
     </div>
@@ -25,6 +25,5 @@
       素敵な写真で表現しよう！
     </h2>
     <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to "Facebook login", user_facebook_omniauth_callback_path, class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>
