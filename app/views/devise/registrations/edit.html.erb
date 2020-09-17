@@ -1,0 +1,36 @@
+<% provide(:title, @user.username) %>
+<h1>Update your profile</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <%= f.label :fullname %><br />
+      <%= f.text_field :fullname, autofocus: true, class: 'form-control' %>
+
+      <%= f.label :username %><br />
+      <%= f.text_field :username, autofocus: true, class: 'form-control' %>
+
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+
+      <%= f.label :profile %><br />
+      <%= f.text_field :profile, autofocus: true, class: 'form-control' %>
+
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    <% end %>
+
+    <%= link_to "Password change", edit_user_password_path(@user) %><br>
+
+
+    <% if current_user.admin? %>
+      <%= link_to "account delete", @user, method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+
+
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="https://gravatar.com/emails" target="_blank">change</a>
+    </div>
+  </div>
+</div>
