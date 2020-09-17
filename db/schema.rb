@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 2020_09_08_082849) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
-    t.string "uid"
     t.string "fullname"
     t.string "username"
     t.string "image"
+    t.string "profile"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

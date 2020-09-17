@@ -6,7 +6,13 @@
       </section>
       <section class="stats">
         <%= render 'shared/stats' %>
-      </section>
+      </section><br>
+
+      profile
+      <aside class="user_profile">
+        <%= @user.profile %>
+      </aside>
+
       <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
       </section>
@@ -14,6 +20,7 @@
     <div class="col-md-8">
       <h3>画像検索</h3>
       ここに検索機能のrenderが入ります。(エラーが発生するため外してあります。)
+      <%= render 'microposts/search' %>
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
     </div>

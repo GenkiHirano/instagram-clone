@@ -5,10 +5,16 @@
 
 <% if @posts.present? %>
   <% @posts.each do |post| %>
-     <%= post.content %>
-     <%= post.image %>
+  <% binding.pry %>
+
+    <%= post.content %><br>
+    <%= post.image %><br>
+    <%= post.id %><br>
+    <%= post.created_at %><br>
+    <%= post.updated_at %><br>
+
   <% end %>
 <% end %>
 
+<br>
 #topページ16行目に入ります。(エラーが発生するため外してあります。)
-<%= render 'microposts/search' %>

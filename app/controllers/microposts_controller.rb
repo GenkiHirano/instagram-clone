@@ -24,7 +24,6 @@ class MicropostsController < ApplicationController
     #Viewのformで取得したパラメータをモデルに渡す
     @posts = Micropost.search(params[:search])
     #binding.pry
-    #render 'pages/top'
   end
 
   private
