@@ -8,8 +8,8 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :users,         only: [:show, :index, :destroy]
   resources :microposts,    only: [:create, :destroy]
+  resources :users,         only: [:show, :index, :destroy]
   resources :relationships, only: [:create, :destroy]
   get  '/notification',       to:'pages#notification'
   get  '/post',               to:'pages#post'

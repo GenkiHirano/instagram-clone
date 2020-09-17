@@ -36,9 +36,11 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
+      
       user.uid 　　　= auth.uid
       user.fullname = auth.fullname
       user.username = auth.username
+      user.profile  = auth.profile
       user.email    = auth.info.email
       user.password = Devise.friendly_token[0, 20] # ランダムなパスワードを作成
       user.image    = auth.info.image.gsub("picture","picture?type=large") if user.provider == "facebook"

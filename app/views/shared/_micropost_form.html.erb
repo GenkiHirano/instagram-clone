@@ -1,7 +1,7 @@
 <%= form_with(model: @micropost, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <span class="image">
-    写真を投稿しよう！<br>
+    <p>写真を投稿しよう!</p>
     <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
   </span>
   <div class="field">

@@ -20,7 +20,13 @@
       <%= f.submit "Update", class: "btn btn-primary" %>
     <% end %>
 
-    <%= link_to "Password change", edit_user_password_path(@user) %>
+    <%= link_to "Password change", edit_user_password_path(@user) %><br>
+
+
+    <% if current_user.admin? %>
+      <%= link_to "account delete", @user, method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+
 
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
