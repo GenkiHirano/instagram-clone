@@ -5,8 +5,6 @@ class UsersController < ApplicationController
   before_action :admin_user,         only: [:destroy]
   before_action :current_user,       only: [:index]
 
-  #mount_uploader :image, ImageUploader
-
   def index
     @users = User.paginate(page: params[:page])
   end
@@ -55,5 +53,4 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
-
 end

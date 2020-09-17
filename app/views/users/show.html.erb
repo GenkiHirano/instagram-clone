@@ -13,13 +13,11 @@
     <section class="stats">
       <%= render 'shared/stats' %><br>
     </section>
-
     profile
     <section class="user_profile">
       <%= @user.profile %>
     </section>
   </aside>
-
   <aside class="col-md-8">
     <%= render 'follow_form' if user_signed_in? %>
     <% if @user.microposts.any? %>

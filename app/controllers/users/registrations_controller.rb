@@ -15,8 +15,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  #編集ページでPWを入れずにユーザー情報を編集できるようにする
-  def update_resource(resource, params)
-    resource.update_without_password(params)
-  end
+    #編集ページでPWを入れずにユーザー情報を編集できるようにする
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
 end
